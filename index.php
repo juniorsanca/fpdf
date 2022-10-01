@@ -19,7 +19,7 @@
       ?>
       <div class="mb-3" >
         <label><?php echo $title ?></p>
-        <input type="hidden" name="<?php echo $title_handle ?>-label" value="<?php echo $title ?>">
+        <!-- <input type="hidden" name="<?php echo $title_handle ?>-label" value="<?php echo $title ?>"> -->
 
         <?php foreach ($options as $option) { ?>
 
