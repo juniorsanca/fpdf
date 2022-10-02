@@ -1,8 +1,7 @@
 <?php
-  function createInput ($title, $title_handle, $type, $options = "", $onclick="", $placeholder="") {
+  function createInput ($title, $title_handle, $type, $options = "", $onclick="", $placeholder="", $error="") {
     if ($type != "radio_group" && $type != "radio") { ?>
    
-      <!--<?php $id = "test"?>-->
       <div class="mb-3" id="<?php echo $id ?>">
         <label for="<?php echo $title_handle ?>" class="title form-label"><?php echo $title ?></label><br>
       
@@ -12,7 +11,10 @@
         <input 
             type="<?php echo $type ?>" class="input form-control" 
             name="<?php echo $title_handle ?>"
-            placeholder="<?php echo $placeholder ?>">
+            placeholder="<?php echo $placeholder ?>"
+            required>
+
+
       </div>
       <?php
     } else {
@@ -22,15 +24,15 @@
         <!-- <input type="hidden" name="<?php echo $title_handle ?>-label" value="<?php echo $title ?>"> -->
 
         <?php foreach ($options as $option) { ?>
-
           <label class="form-label"> <?php echo $option->title ?> </label>
           <input 
             type="<?php echo $option->type ?>"
             name="<?php echo $option->title_handle ?>" 
             value="<?php echo $option->title ?>"
             placeholder="<?php echo $option->placeholder ?>"
-            >
-            <!--onclick="<?php echo $option->onclick ?>-->
+            required>
+            
+
         <?php } ?>
       </div>
       <?php
@@ -87,7 +89,8 @@
                     'type' => 'text',
                     'options' => "",
                     'onclick' => "",
-                    'placeholder'=> "Votre nom"
+                    'placeholder'=> "Votre nom",
+                    'error'=> ""
                   ],
                   (object) [
                     'title' => 'Prenom',
@@ -95,8 +98,8 @@
                     'type' => 'text',
                     'options' => "",
                     'onclick' => "",
-                    'placeholder'=> "Votre prénom"
-
+                    'placeholder'=> "Votre prénom",
+                    'error'=> ""
                   ],
                   (object) [
                     'title' => 'Date de naissance',
@@ -104,8 +107,8 @@
                     'type' => 'date',
                     'options' => "",
                     'onclick' => "",
-                    'placeholder'=> ""
-
+                    'placeholder'=> "",
+                    'error'=> ""
                   ],
                   (object) [
                     'title' => 'Lieu de naissance',
@@ -113,7 +116,8 @@
                     'type' => 'text',
                     'options' => "",
                     'onclick' => "",
-                    'placeholder'=> "Votre ville de naissance"
+                    'placeholder'=> "Votre ville de naissance",
+                    'error'=> ""
 
                   ],
                   (object) [
@@ -127,7 +131,8 @@
                         'type' => 'radio',
                         'onclick'=>'situation(1)',
                         'options' => "",
-                        'placeholder'=> ""
+                        'placeholder'=> "",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -136,7 +141,8 @@
                         'type' => 'radio',
                         'onclick'=>'situation(1)',
                         'options' => "",
-                        'placeholder'=> ""
+                        'placeholder'=> "",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -145,7 +151,8 @@
                         'type' => 'radio',
                         'onclick'=>'situation(1)',
                         'options' => "",
-                        'placeholder'=> ""
+                        'placeholder'=> "",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -154,12 +161,14 @@
                         'type' => 'radio',
                         'onclick'=>'situation(0)',
                         'options' => "",
-                        'placeholder'=> ""
+                        'placeholder'=> "",
+                        'error'=> ""
 
                       ]
                       ),
                       'onclick' => "",
-                      'placeholder'=> ""
+                      'placeholder'=> "",
+                      'error'=> ""
 
                   ],
                   (object) [
@@ -168,7 +177,8 @@
                     'type' => 'text',
                     'options' => "",
                     'onclick' => "",
-                    'placeholder'=> "Nom et prénom"
+                    'placeholder'=> "Nom et prénom",
+                    'error'=> ""
 
                   ]
                 );
@@ -196,7 +206,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => 'child[0]',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -206,11 +217,13 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => 'child[1]',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                           ),
-                            'placeholder'=> ""
+                            'placeholder'=> "",
+                            'error'=> ""
                       ],
                       (object) [
                         'title' => 'Nom et prenom de votre enfant',
@@ -219,8 +232,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Nom et prénom"
-
+                        'placeholder'=> "Nom et prénom",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -235,8 +248,8 @@
                               'type' => 'radio',
                               'options' => "",
                               'onclick' => "",
-                              'placeholder'=> ""
-
+                              'placeholder'=> "",
+                              'error'=> ""
 
                           ],
                           (object) [
@@ -246,13 +259,14 @@
                               'type' => 'radio',
                               'options' => "",
                               'onclick' => "",
-                              'placeholder'=> ""
+                              'placeholder'=> "",
+                              'error'=> ""
 
                           ]
                       ),
                         'onclick' => "",
-                        'placeholder'=> ""
-
+                        'placeholder'=> "",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -268,8 +282,8 @@
                               'type' => 'radio',
                               'options' => "",
                               'onclick' => "",
-                              'placeholder'=> ""
-
+                              'placeholder'=> "",
+                              'error'=> ""
 
                           ],
                           (object) [
@@ -279,13 +293,14 @@
                               'type' => 'radio',
                               'options' => "",
                               'onclick' => "",
-                              'placeholder'=> ""
+                              'placeholder'=> "",
+                              'error'=> ""
 
                           ]
                       ),
                         'onclick' => "",
-                        'placeholder'=> ""
-
+                        'placeholder'=> "",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -295,8 +310,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Nom et prénom"
-
+                        'placeholder'=> "Nom et prénom",
+                        'error'=> ""
 
                       ],
                       
@@ -326,7 +341,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -336,7 +352,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -355,7 +372,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -365,7 +383,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -384,7 +403,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -394,7 +414,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -406,8 +427,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder' => "Nom et prénom du notaire"
-
+                        'placeholder' => "Nom et prénom du notaire",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -417,7 +438,9 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Lieu d exercice du notaire"
+                        'placeholder'=> "Lieu d exercice du notaire",
+                        'error'=> ""
+                        
                       ],
                       (object) [
                         'title' => 'Date de la donation',
@@ -426,7 +449,8 @@
                         'type' => 'date',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> ""
+                        'placeholder'=> "",
+                        'error'=> ""
                       ],
     
                 );
@@ -455,7 +479,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -465,7 +490,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -477,8 +503,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder' => "Nom et prénom"
-
+                        'placeholder' => "Nom et prénom",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -488,8 +514,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Nom de la ville"
-
+                        'placeholder'=> "Nom de la ville",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -506,7 +532,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -516,7 +543,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -528,8 +556,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder' => "Nom et prénom"
-
+                        'placeholder' => "Nom et prénom",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -539,8 +567,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Nom de la ville"
-
+                        'placeholder'=> "Nom de la ville",
+                        'error'=> ""
 
                       ],
                 );
@@ -571,7 +599,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -581,7 +610,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -600,7 +630,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -610,7 +641,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -629,7 +661,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -639,7 +672,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -658,7 +692,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -668,7 +703,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -680,7 +716,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Nom et prénom"
+                        'placeholder'=> "Nom et prénom",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -690,7 +727,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Designer leg"
+                        'placeholder'=> "Designer leg",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -707,7 +745,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -717,8 +756,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
-
+                                'placeholder'=> "",
+                                'error'=> ""
                             ],
                         )
                       ],
@@ -729,7 +768,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Nom de l’organisme de bienfaisance"
+                        'placeholder'=> "Nom de l’organisme de bienfaisance",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -739,7 +779,8 @@
                         'type' => 'number',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "000000000000000"
+                        'placeholder'=> "000000000000000",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -749,7 +790,8 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Chèque de 500€"
+                        'placeholder'=> "Chèque de 500€",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -759,11 +801,13 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Chèque de 500e"
+                        'placeholder'=> "Chèque de 500€",
+                        'error'=> ""
 
                       ],
                       (object) [
-                        'title' => 'Souhaitez-vous que votre conjoint hérite les biens que vous avez laissé sans en avoir disposé ou à l’égard desquels les dispositions sont privées ?',
+                        'title' => 'Souhaitez-vous que votre conjoint hérite les biens que vous 
+                                    avez laissé sans en avoir disposé ou à l’égard desquels les dispositions sont privées ?',
                         'handle' => 'conjointHeritierBiens[]',
                         'type' => 'radio_group',
                         'onclick' => "",
@@ -776,7 +820,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -786,8 +831,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
-
+                                'placeholder'=> "",
+                                'error'=> ""
                             ],
                         )
                       ],
@@ -797,15 +842,19 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Votre nom et prénom"
+                        'placeholder'=> "Votre nom et prénom",
+                        'error'=> ""
+
                       ],
                       (object) [
                         'title' => 'Ville de l heritier',
-                        'handle' => 'denominationVilleHeritier',
+                        'title_handle' => 'villeHeritier',
+                        'handle' => 'villeHeritier',
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Ville"
+                        'placeholder'=> "Ville",
+                        'error'=> ""
 
                       ],
                       (object) [
@@ -822,7 +871,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                             (object) [
@@ -832,7 +882,8 @@
                                 'type' => 'radio',
                                 'options' => "",
                                 'onclick' => '',
-                                'placeholder'=> ""
+                                'placeholder'=> "",
+                                'error'=> ""
 
                             ],
                         )
@@ -840,11 +891,12 @@
                       (object) [
                         'title' => 'Nom et prenom du desheriter',
                         'title_handle' => 'desheriterName',
-                        'handle' => 'denomination',
+                        'handle' => 'desheriterName',
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Nom et prenom"
+                        'placeholder'=> "Nom et prenom",
+                        'error'=> ""
 
                       ],
                 );
@@ -869,16 +921,18 @@
                         'type' => 'text',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> "Lieu de la signautre"
+                        'placeholder'=> "Lieu de la signautre",
+                        'error'=> ""
                       ],
                       (object) [
                         'title' => 'Date de la signature',
                         'title_handle' => 'dateSignature',
-                        'handle' => 'dateNotation',
+                        'handle' => 'dateSignature',
                         'type' => 'date',
                         'options' => "",
                         'onclick' => "",
-                        'placeholder'=> ""
+                        'placeholder'=> "",
+                        'error'=> ""
                       ],
     
                 );
