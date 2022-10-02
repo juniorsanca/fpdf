@@ -1,49 +1,92 @@
 <?php
 require_once("fpdf.php");
 
-
 #recieving the form data
 $name = $_POST['name'];
 $lastname = $_POST['lastname'];
 $birthday = $_POST['birthday'];
 $birthplace = $_POST['birthplace'];
-// $situation = $_POST['situation'];
-$husband = $_POST['husband'];
+$situations = $_POST['situation'];
+$conjoint = $_POST['conjoint'];
 
-// $child = $_POST['child'];
-$sons = $_POST['son'];
-// $administrator = $_POST['admin'];
-// $tuteurs = $_POST['tuteur'];
-$tuteurD = $_POST['tuteurD'];
+$childs = $_POST['child'];
+$son = $_POST['son'];
+$admins = $_POST['admin'];
+$tuteurs = $_POST['tuteur'];
+$tuteurN = $_POST['tuteurName'];
 
-// $testaments = $_POST['testament'];
-// $Ntestaments = $_POST['nTestament'];
-// $donations = $_POST['donation'];
+$testaments = $_POST['testament'];
+$Ntestaments = $_POST['nTestament'];
+$donations = $_POST['donation'];
 $nameNotaire = $_POST['nameNotaire'];
 $lieuNotaire = $_POST['lieuNotaire'];
 $dateNotation = $_POST['dateNotation'];
 
-//$executeurs = $_POST['executeur'];
+$executeurs = $_POST['executeur'];
+$nameExecuteur = $_POST['nameExecuteur'];
+$lieuExecuteur = $_POST['lieuExecuteur'];
 
-//var_dump($name);
+$executeurAlternatifs = $_POST['executeurAlternatif'];
 
-//print_r($situation);
-// foreach ($situation as $s) {
-//     echo "$s <br>";
-//   }
-//echo $situation[];
+$executAltern = $_POST['executAltern'];
+$villeExecuteurAlternatif = $_POST['executeurAlternatif'];
+
+
+$legsParticuliers = $_POST['legsParticulier'];
+$legsOrganismes = $_POST['legsOrganisme'];
+$conjointHerites = $_POST['conjointHerite'];
+$desheriterQuelquns = $_POST['desheriterQuelqun'];
+
+$descriptionLeg = $_POST['descriptionLeg'];
+
+$legsOrganismeBienfaisances = $_POST['legsOrganismeBienfaisance'];
+$denominationName = $_POST['denominationName'];
+$denominationNumber = $_POST['denominationNumber'];
+$denominationDescription = $_POST['denominationDescription'];
+$denominationVille = $_POST['denominationVille'];
+$conjointHeritierBiens = $_POST['conjointHeritierBiens'];
+
+$denominationHeritier = $_POST['denominationHeritier'];
+$denominationVilleHeritier = $_POST['denominationVilleHeritier'];
+var_dump($denominationVilleHeritier);
+die();
+$desheriterQuelqunB = $_POST['desheriterQuelqunB'];
+$desheriterName = $_POST['desheriterName'];
+
+$lieuSignature = $_POST['lieuSignature'];
+$dateSignature = $_POST['dateSignature'];
+
+
+//desheriterQuelqun
+//denominationVilleHeritier
+//denominationVille
+//denominationDescription
+
+//denominationNumber
+//legDesignation
 
 //Tranformer le array en string
-// $s = implode(",", $situation);
+ $situation = implode(",", $situations);
+// var_dump($situation);
+// die();
+$child = implode(",", $childs);
+$admin = implode(",", $admins);
+$tuteur = implode(",", $tuteurs);
+$testament = implode(",", $testaments);
+$Ntestament = implode(",", $Ntestaments);
+$donation = implode(",", $donations);
+$executeur = implode(",", $executeurs);
+$executeurAlternatif = implode(",", $executeurAlternatifs);
 
-// $c = implode(",", $child);
-// $son = implode(",", $sons);
-// $admin = implode(",", $administrator);
-// $tuteur = implode(",", $tuteurs);
+$legsParticulier = implode(",", $legsParticuliers);
+$legsOrganisme = implode(",", $legsOrganismes);
+$conjointHerite = implode(",", $conjointHerites);
+$desheriterQuelqun = implode(",", $desheriterQuelquns);
+$legsOrganismeBienfaisance = implode(",", $legsOrganismeBienfaisances);
+$conjointHeritierBien = implode(",", $conjointHeritierBiens);
+//$denominationVilleHeritier = implode(",", $denominationVilleHeritierS);
+$desheriterQuelqun = implode(",", $desheriterQuelqunB);
 
-// $testament = implode(",", $testaments);
-// $Ntestament = implode(",", $Ntestaments);
-// $donation = implode(",", $donations);
 
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -53,6 +96,8 @@ $pdf->Cell(30,5,"BASE : ",0,10);
 $pdf->Ln();
 $pdf->SetFont('arial','',12);
 $pdf->Cell(30,5,"Ceci est mon testament",0,10);
+
+
 // $pdf->Write(5,'Ceci est mon testament Je, soussigné(e) né(e) le … à … étant en pleine possession de mes 
 // facultés mentales, déclare établir mes dispositions de dernières volontés ainsi qu’il suit : 
 //  ');
@@ -71,8 +116,24 @@ foreach ($_POST as $key => $value) {
 */
 $pdf->SetFont('arial','',12);
 $pdf->Ln();
-$pdf->Cell(30,5,"Je soussigné(e) ". $name ." ". $lastname. " né(e) le " .$birthday . " à " .$birthplace. "",0,0);
+$pdf->Cell(30,5,"Je soussigné(e) ". $name ." ". $lastname. " né(e) le " .$birthday . " à " .$birthplace. "",0,1);
 $pdf->Ln();
+$pdf->Cell(30,5,"MOTS :".$situation."_".$conjoint."_".$child."_".$son."_".$tuteur."_".$admin."_".$tuteurN."_",0,0);
+$pdf->Ln();
+$pdf->Cell(30,5,"MOTS :".$testament."_".$Ntestament."_".$donation."_".$nameNotaire."_".$lieuNotaire."_".$dateNotation."_",0,0);
+$pdf->Ln();
+$pdf->Cell(30,5,"MOTS :".$executeur."_".$nameExecuteur."_".$lieuExecuteur."_".$executeurAlternatif."_".$executAltern."_",0,0);
+$pdf->Ln();
+$pdf->Cell(30,5,"MOTS :".$villeExecuteurAlternatif."_".$legsParticulier."_".$dispositionTestament."_".$legsOrganisme."_".$conjointHerite."_",0,0);
+$pdf->Ln();
+$pdf->Cell(30,5,"MOTS :".$desheriterQuelqun."_".$descriptionLeg."_".$legsOrganismeBienfaisances."_",0,0);
+$pdf->Ln();
+$pdf->Cell(30,5,"MOTS :".$denominationName."_".$denominationNumber."_".$denominationDescription."_".$denominationVille."_".$conjointHeritierBien."_",0,0);
+$pdf->Ln();
+$pdf->Cell(30,5,"MOTS :".$denominationHeritier."_".$denominationVilleHeritier."_".$desheriterQuelqunB."_".$desheriterName."_".$lieuSignature."_".$dateSignature."",0,0);
+$pdf->Ln();
+
+
 $pdf->Cell(30,5,"étant en pleine possession de mes facultés mentales, déclare établir mes dispositions de dernières ",0,0);
 $pdf->Ln();
 $pdf->Cell(30,5,"volontés ainsi qu’il suit : ",0,1);
@@ -235,62 +296,7 @@ $pdf->Cell(30,5,"prénom / nom / date et lieu naissance”",0,10);
 $pdf->Ln();
 
 
-
-
-//>Legs :
-//de mes dernières volontés prises ci-dessus.”
-// OUI pour désigner exécuteur testamentaire 
-
-/*
-if ($s != "Celibataire") {
-    $pdf->Cell(30,10,"S. familiale ",0,0);
-    $pdf->Cell(30,10,$s,0,1);
-
-    $pdf->Cell(40,10,"Votre conjoint ",0,0);
-    $pdf->Cell(40,10,$husband,0,1);
-}
-*/
-
-// $pdf->Cell(50,10,"Avez vous un enfant ?",0,0);
-/*
-$pdf->Cell(40,10,$c,0,1);
-if ($c != "Non") {
-$pdf->Cell(60,10,"Nom prenom de votre enfant ?",0,0);
-// $pdf->Cell(50,10,$son,0,1);
-}
-
-// $pdf->Cell(90,10,"Souhaitez-vous nommer un administrateur ?",0,0);
-// $pdf->Cell(30,10,$admin,0,1);
-
-// $pdf->Cell(90,10,"Souhaitez-vous nommer un Tuteur ?",0,0);
-$pdf->Cell(30,10,$tuteur,0,1);
-
-if ($c != "Non") {
-// $pdf->Cell(90,10,"Nom et prenom du tuteur ?",0,0);
-$pdf->Cell(30,10,$tuteurD,0,1);
-}
-// $pdf->Cell(90,10,"Avez-vous deja redige un testament ?",0,0);
-$pdf->Cell(30,10,$testament,0,1);
-
-// $pdf->Cell(170,10,"Souhaitez-vous que ce nouveau testament revoque ce que vous avez deja prevu ?",0,0);
-$pdf->Cell(30,10,$Ntestament,0,1);
-
-// $pdf->Cell(110,10,"Avez-vous deja consenti une donation entre epoux ?",0,0);
-$pdf->Cell(30,10,$donation,0,1);
-
-// $pdf->Cell(80,10,"Nom et prenom du notaire ?",0,0);
-$pdf->Cell(30,10,$nameNotaire,0,1);
-
-// $pdf->Cell(80,10,"Lieu d exercice du notaire ?",0,0);
-$pdf->Cell(30,10,$lieuNotaire,0,1);
-
-// $pdf->Cell(80,10,"Date de la donation ?",0,0);
-$pdf->Cell(30,10,$dateNotation,0,1);
-*/
-
 $file = time().'.pdf';
 $pdf->output($file,'D');
-
-
 
 ?>
