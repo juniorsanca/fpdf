@@ -246,7 +246,6 @@
                 }
               ?>
                 <div class="field btns">
-                  <button class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
                   <button class="dowloand firstNext next-1 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
               </div>
@@ -383,7 +382,7 @@
                 }
               ?>
                 <div class="field btns">
-                  <button class="dowloand-back prev-2 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
                   <button class="dowloand firstNext next-2 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
               </div>
@@ -525,7 +524,7 @@
                 }
               ?>
                 <div class="field btns">
-                  <button class="dowloand-back prev-3 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand-back prev-2 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
                   <button class="dowloand firstNext next-3 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
               </div>
@@ -647,7 +646,7 @@
                 }
               ?>
                 <div class="field btns">
-                  <button class="dowloand-back prev-4 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand-back prev-3 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
                   <button class="dowloand firstNext next-4 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
               </div>
@@ -977,7 +976,7 @@
                 }
               ?>
                 <div class="field btns">
-                  <button class="dowloand-back prev-5 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand-back prev-4 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
                   <button class="dowloand firstNext next-5 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
               </div>
