@@ -134,7 +134,9 @@
               </div>
           </div>
 
+          <div class="form-outer">
             <form action="convert-pdf.php" method="post">
+            <div class="page slide-page">
             <h6 class="info text-left mt-5 mb-5"> Étape 1 : Votre identité et vos informations familiales</h4>
               <?php
                 $inputs = array(
@@ -244,10 +246,11 @@
                 }
               ?>
                 <div class="field btns">
-                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
-                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                  <button class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand firstNext next-1 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
-
+              </div>
+              <div class="page">
             <h6 class="info text-left mt-5 mb-5"> Étape 2 : L'existence d'enfants</h6>
               <?php
                 $inputs = array(
@@ -380,10 +383,11 @@
                 }
               ?>
                 <div class="field btns">
-                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
-                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                  <button class="dowloand-back prev-2 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand firstNext next-2 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
-
+              </div>
+              <div class="page">
               <h6 class="info text-left mt-5 mb-5">Étape 3 : L'existence d'un testament ou d'une donation</h6>
               <?php
                 $inputs = array(
@@ -521,10 +525,11 @@
                 }
               ?>
                 <div class="field btns">
-                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
-                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                  <button class="dowloand-back prev-3 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand firstNext next-3 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
-
+              </div>
+              <div class="page">
             <h6 class="info text-left mt-5 mb-5"> Étape 4 : Désignation d'une exécuteur testamentaire</h6>
             <?php
                 $inputs = array(
@@ -642,10 +647,11 @@
                 }
               ?>
                 <div class="field btns">
-                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
-                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                  <button class="dowloand-back prev-4 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand firstNext next-4 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
-
+              </div>
+              <div class="page">
             <h6  class="info text-left mt-5 mb-5"> Étape 5 : Dispositions que vous souhaitez prendre</h6>
            <?php
                 $inputs = array(
@@ -964,7 +970,6 @@
 
                       ],
                 );
-
                 /*  <input type="radio" name="child[]" value="Oui" onclick="child(0)" checked>Oui */
                 foreach ($inputs as $input) {
                   createInput($input->title, $input->handle, $input->type, $input->options, $input->onclick, $input->placeholder);
@@ -972,10 +977,11 @@
                 }
               ?>
                 <div class="field btns">
-                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
-                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                  <button class="dowloand-back prev-5 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button class="dowloand firstNext next-5 btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
                 </div>
-
+              </div>
+              <div class="page">
             <h6 class="info text-left mt-5 mb-5"> Étape 6 : Date et lieu de la signature</h6>
             <?php
                 $inputs = array(
@@ -1007,11 +1013,13 @@
                   //var_dump($input->options[0]->onclick);
                 }
               ?>
-              <div class="field btns">
-                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
-                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Télécharger votre document</span></button>
+                <div class="field btns">
+                  <button class="dowloand-back prev-5 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button type="submit" class="dowloand btn btn-primary mb-3"><span class="dowloand-text">Télécharger votre document</span></button>
                 </div>
+              </div>
             </form>
+              </div>
             <?php
             } else {
               echo 'Voila le résultat du formulaire<br/>';
@@ -1026,5 +1034,6 @@
         </div>
       </div>        
     </div>
+    <script src="javascript.js"></script>
   </body>
 </html>
