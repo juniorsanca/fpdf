@@ -145,10 +145,11 @@ body {
   }
   .container .form-outer form{
     display: flex;
-    width: 400%;
+    /* width: 400%; */
+    width: 600%;
   }
   .form-outer form .page{
-    width: 25%;
+    width: 20%;
     transition: margin-left 0.3s ease-in-out;
   }
   .form-outer form .page .title{
@@ -157,7 +158,6 @@ body {
     font-weight: 500;
   }
   .form-outer form .page .field{
-    width: 330px;
     height: 45px;
     margin: 45px 0;
     display: flex;
