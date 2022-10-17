@@ -87,7 +87,7 @@ $pdf->Cell(30,5,"MOTS :".$executeur."_".$nameExecuteur."_".$lieuExecuteur."_".$e
 $pdf->Ln();
 $pdf->Cell(30,5,"MOTS :".$villeExecuteurAlternatif."_".$legsParticulier."_".$legsOrganisme."_".$conjointHerite."_",0,0);
 $pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$desheriterQuelqun."_".$descriptionLeg."_".$legsOrganismeBienfaisance."_",0,0);
+$pdf->Cell(30,5,"MOTS :".$descriptionLeg."_".$legsOrganismeBienfaisance."_",0,0);
 $pdf->Ln();
 $pdf->Cell(30,5,"MOTS :".$denominationName."_".$denominationNumber."_".$denominationDescription."_".$denominationVille."_".$conjointHeritierBien."_",0,0);
 $pdf->Ln();
@@ -102,7 +102,7 @@ $pdf->Cell(30,5,"Ce testament révoque toutes dispositions antérieures que j’
 $pdf->Ln();
 $pdf->Cell(30,5,"Je prive les personnes suivantes de tout droit dans ma succession : ",0,1);
 $pdf->Ln();
-$pdf->Cell(30,5,"Aux personnes suivantes : ",0,1);
+$pdf->Cell(30,5,"Aux personnes suivantes :.$desheriterQuelqun. ",0,1);
 $pdf->Ln();
 $pdf->Cell(30,5,"Je lègue … % de mon patrimoine, en ce compris les biens suivants :",0,1);
 $pdf->Ln();

@@ -27,6 +27,7 @@
             type="<?php echo $option->type ?>"
             name="<?php echo $option->title_handle ?>" 
             value="<?php echo $option->title ?>"
+            class="radio"
             required>
             <label class="form-label-option"> <?php echo $option->title ?> </label>
         </input>

@@ -271,3 +271,71 @@ body {
     display: block;
     color: #fff;
   }
+
+  @media only screen and (max-width: 425px){
+    .container {
+        padding-left: 0px;
+        padding-right: 0;
+    }
+    .container .progress-bar .step p {
+        font-weight: 500;
+        font-size: 8px;
+        color: #000;
+        margin-bottom: 8px;
+    }
+    .info {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 30px;
+        color: #000000;
+        margin: 0;
+    }
+    .dowloand{
+        width: 65%;
+    }
+    .dowloand-text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+    .dowloand-text {
+       font-size: 15px;
+    }
+    .form-outer form .page .field {
+        margin: 0;
+        display: block;
+    }
+    .radio{
+        margin-top: 20px;
+    }
+    .form-outer form .page .title {
+        font-size: 15px;
+    }
+    .container .form-outer{
+        width: 100%;
+        overflow: hidden;
+    }
+    .container .form-outer form {
+        display: flex;
+        width: 600%;
+    }
+    .form-outer form .page {
+        width: 20%;
+        transition: margin-left 0.3s ease-in-out;
+    }
+    .info .text-left .mt-5 .mb-5{
+        text-align: center;
+    }
+    .field .btns{
+        display: block;
+    }
+    /* .mb-3{
+        text-align: center;
+        margin-top: 20px;
+    } */
+  }
