@@ -21,16 +21,15 @@
       ?>
       <div class="mb-3" >
         <label><?php echo $title ?></p>
-        <!-- <input type="hidden" name="<?php echo $title_handle ?>-label" value="<?php echo $title ?>"> -->
 
         <?php foreach ($options as $option) { ?>
-          <label class="form-label"> <?php echo $option->title ?> </label>
           <input 
             type="<?php echo $option->type ?>"
             name="<?php echo $option->title_handle ?>" 
             value="<?php echo $option->title ?>"
-            placeholder="<?php echo $option->placeholder ?>"
             required>
+            <label class="form-label-option"> <?php echo $option->title ?> </label>
+        </input>
             
 
         <?php } ?>
@@ -76,11 +75,67 @@
             <?php
               if(empty($_POST['valide'])) {
             ?>
+
+            <!-- PROGRESS BAR -->
+                    <div class="progress-bar">
+              <div class="step">
+                <p>
+                    INFORMATIONS
+                </p>
+                <div class="bullet">
+                    <span>1</span>
+                </div>
+                <div class="check fas fa-check"></div>
+              </div>
+              <div class="step">
+                <p>
+                    ENFANTS
+                </p>
+                <div class="bullet">
+                    <span>2</span>
+                </div>
+                <div class="check fas fa-check"></div>
+              </div>
+              <div class="step">
+                <p>
+                    TESTAMENT
+                </p>
+                <div class="bullet">
+                    <span>3</span>
+                </div>
+                <div class="check fas fa-check"></div>
+              </div>
+              <div class="step">
+                <p>
+                    DÉSIGNATION
+                </p>
+                <div class="bullet">
+                    <span>4</span>
+                </div>
+                <div class="check fas fa-check"></div>
+              </div>
+              <div class="step">
+                <p>
+                    DISPOSITIONS
+                </p>
+                <div class="bullet">
+                    <span>5</span>
+                </div>
+                <div class="check fas fa-check"></div>
+              </div>
+              <div class="step">
+                <p>
+                    SIGNATURE
+                </p>
+                <div class="bullet">
+                    <span>6</span>
+                </div>
+                <div class="check fas fa-check"></div>
+              </div>
+          </div>
+
             <form action="convert-pdf.php" method="post">
-            <h2 class="text-center mt-5 mb-5"></h4>
-            <h3><strong>INFORMATIONS</strong></h3>
             <h6 class="info text-left mt-5 mb-5"> Étape 1 : Votre identité et vos informations familiales</h4>
-            
               <?php
                 $inputs = array(
                   (object) [
@@ -188,9 +243,12 @@
                   //var_dump($input->options);
                 }
               ?>
-                          <h3><strong>ENFANTS</strong></h3>
-            <h6 class="info text-left mt-5 mb-5"> Étape 2 : L'existence d'enfants</h6>
+                <div class="field btns">
+                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                </div>
 
+            <h6 class="info text-left mt-5 mb-5"> Étape 2 : L'existence d'enfants</h6>
               <?php
                 $inputs = array(
                     (object) [
@@ -321,10 +379,12 @@
                   //var_dump($input->options[0]->onclick);
                 }
               ?>
-              
-              <h3><strong>TESTAMENT</strong> </h3>
-              <h6 class="info text-left mt-5 mb-5">Étape 3 : L'existence d'un testament ou d'une donation</h6>
+                <div class="field btns">
+                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                </div>
 
+              <h6 class="info text-left mt-5 mb-5">Étape 3 : L'existence d'un testament ou d'une donation</h6>
               <?php
                 $inputs = array(
                     (object) [
@@ -460,8 +520,11 @@
                   //var_dump($input->options[0]->onclick);
                 }
               ?>
+                <div class="field btns">
+                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                </div>
 
-            <h3><strong>DESIGNATION</strong></h3>
             <h6 class="info text-left mt-5 mb-5"> Étape 4 : Désignation d'une exécuteur testamentaire</h6>
             <?php
                 $inputs = array(
@@ -578,11 +641,12 @@
                   //var_dump($input->options[0]->onclick);
                 }
               ?>
+                <div class="field btns">
+                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                </div>
 
-
-            <h3><strong>DISPOSITIONS</strong></h3>
             <h6  class="info text-left mt-5 mb-5"> Étape 5 : Dispositions que vous souhaitez prendre</h6>
-           
            <?php
                 $inputs = array(
                     (object) [
@@ -907,11 +971,12 @@
                   //var_dump($input->options[0]->onclick);
                 }
               ?>
+                <div class="field btns">
+                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Continuer et sauvegarder</span></button>
+                </div>
 
-
-            <h3><strong>SIGNATURE</strong></h3>
             <h6 class="info text-left mt-5 mb-5"> Étape 6 : Date et lieu de la signature</h6>
-            
             <?php
                 $inputs = array(
                       (object) [
@@ -942,11 +1007,10 @@
                   //var_dump($input->options[0]->onclick);
                 }
               ?>
-
-
-              <div class="mb-3"><br>
-                <button type="submit" class="dowloand btn btn-primary mb-3"><span class="dowloand-text">Télécharger</span></button>
-              </div>
+              <div class="field btns">
+                  <button type="submit" class="dowloand-back prev-1 prev btn btn-primary mb-3"><span class="dowloand-text">Retour</span></button>
+                  <button type="submit" class="dowloand firstNext next btn btn-primary mb-3"><span class="dowloand-text">Télécharger votre document</span></button>
+                </div>
             </form>
             <?php
             } else {
