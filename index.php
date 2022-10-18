@@ -1,5 +1,5 @@
 <?php
-  function createInput ($title, $title_handle, $type, $options = "", $onclick="", $placeholder="", $error="") {
+  function createInput ($title, $title_handle, $type, $options = "", $onclick="", $placeholder="", $error="", $id="") {
     if ($type != "radio_group" && $type != "radio") { ?>
    
       <div class="mb-3" id="<?php echo $id ?>">
@@ -24,6 +24,7 @@
 
         <?php foreach ($options as $option) { ?>
           <input 
+            id="<?php  echo preg_replace('/[^A-Za-z0-9\-]/', '', $option->title_handle. '' .$option->title) ?>"
             type="<?php echo $option->type ?>"
             name="<?php echo $option->title_handle ?>" 
             value="<?php echo $option->title ?>"
@@ -142,6 +143,7 @@
               <?php
                 $inputs = array(
                   (object) [
+                    'id' => '',
                     'title' => 'Nom',
                     'handle' => 'name',
                     'type' => 'text',
@@ -151,6 +153,7 @@
                     'error'=> ""
                   ],
                   (object) [
+                    'id' => '',
                     'title' => 'Prenom',
                     'handle' => 'lastname',
                     'type' => 'text',
@@ -160,6 +163,7 @@
                     'error'=> ""
                   ],
                   (object) [
+                    'id' => '',
                     'title' => 'Date de naissance',
                     'handle' => 'birthday',
                     'type' => 'date',
@@ -169,6 +173,7 @@
                     'error'=> ""
                   ],
                   (object) [
+                    'id' => '',
                     'title' => 'Lieu de naissance',
                     'handle' => 'birthplace',
                     'type' => 'text',
@@ -179,11 +184,13 @@
 
                   ],
                   (object) [
+                    'id' => '',
                     'title' => 'Quelle est votre situation familiale ?',
                     'handle' => 'situation[]',
                     'type' => 'radio_group',
                     'options' => array(
                       (object) [
+                        'id' => '',
                         'title' => 'Celibataire',
                         'title_handle' => 'situation[]',
                         'type' => 'radio',
@@ -194,6 +201,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Union de fait',
                         'title_handle' => 'situation[]',
                         'type' => 'radio',
@@ -204,6 +212,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Divorcé',
                         'title_handle' => 'situation[]',
                         'type' => 'radio',
@@ -214,6 +223,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Marie ou pacs',
                         'title_handle' => 'situation[]',
                         'type' => 'radio',
@@ -230,6 +240,7 @@
 
                   ],
                   (object) [
+                    'id' => '',
                     'title' => 'Nom et prenom de votre conjoint :',
                     'handle' => 'conjoint',
                     'type' => 'text',
@@ -255,12 +266,14 @@
               <?php
                 $inputs = array(
                     (object) [
+                        'id' => '',
                         'title' => 'Avez vous des enfants ?',
                         'handle' => 'child[]',
                         'type' => 'radio_group',
                         'onclick' => "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'child[]',
                                 'value' => 'Oui',
@@ -272,6 +285,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'child[]',
                                 'value' => 'Non',
@@ -287,6 +301,7 @@
                             'error'=> ""
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Nom et prenom de votre enfant',
                         'title_handle' => 'son',
                         'handle' => 'son',
@@ -298,11 +313,13 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous nommer un administrateur des biens de vos enfants mineurs ? ',
                         'handle' => 'adminstrator[]',
                         'type' => 'radio_group',
                         'options' => array(
                           (object) [
+                              'id' => '',
                               'title' => 'Oui',
                               'title_handle' => 'admin[]',
                               'value' => 'adminstrator[]',
@@ -314,6 +331,7 @@
 
                           ],
                           (object) [
+                              'id' => '',
                               'title' => 'Non',
                               'title_handle' => 'admin[]',
                               'value' => 'adminstrator[]',
@@ -331,12 +349,14 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous nommer un tuteur pour vous enfants si les deux parents décedent ? ',
                         'handle' => 'tuteur[]',
                         'type' => 'radio_group',
                         'placeholder'=> "",
                         'options' => array(
                           (object) [
+                              'id' => '',
                               'title' => 'Oui',
                               'title_handle' => 'tuteur[]',
                               'value' => 'tuteur[]',
@@ -348,6 +368,7 @@
 
                           ],
                           (object) [
+                              'id' => '',
                               'title' => 'Non',
                               'title_handle' => 'tuteur[]',
                               'value' => 'tuteur[]',
@@ -356,8 +377,7 @@
                               'onclick' => "",
                               'placeholder'=> "",
                               'error'=> ""
-
-                          ]
+                          ],
                       ),
                         'onclick' => "",
                         'placeholder'=> "",
@@ -365,6 +385,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Nom et prenom du tuteur designe',
                         'title_handle' => 'tuteurName',
                         'handle' => 'tuteurName',
@@ -392,6 +413,7 @@
               <?php
                 $inputs = array(
                     (object) [
+                        'id' => '',
                         'title' => 'Avez-vous déjà rédigé un testament ?',
                         'handle' => 'testament[]',
                         'type' => 'radio_group',
@@ -399,6 +421,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'testament[]',
                                 'value' => 'Oui',
@@ -410,6 +433,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'testament[]',
                                 'value' => 'Non',
@@ -423,6 +447,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous que ce nouveau testament révoque ce que vous avez déjà prévu ?',
                         'handle' => 'nTestament[]',
                         'type' => 'radio_group',
@@ -430,6 +455,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'nTestament[]',
                                 'value' => 'Oui',
@@ -441,6 +467,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'nTestament[]',
                                 'value' => 'Non',
@@ -454,6 +481,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Avez-vous déjà consenti une donation  entre époux ?',
                         'handle' => 'donation[]',
                         'type' => 'radio_group',
@@ -461,6 +489,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'donation[]',
                                 'value' => 'Oui',
@@ -472,6 +501,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'donation[]',
                                 'value' => 'Non',
@@ -485,6 +515,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Nom et prenom du notaire',
                         'title_handle' => 'nameNotaire',
                         'handle' => 'nameNotaire',
@@ -496,6 +527,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Lieu d exercice du notaire',
                         'title_handle' => 'lieuNotaire',
                         'handle' => 'lieuNotaire',
@@ -507,6 +539,7 @@
                         
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Date de la donation',
                         'title_handle' => 'dateNotation',
                         'handle' => 'dateNotation',
@@ -534,6 +567,7 @@
             <?php
                 $inputs = array(
                     (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous désigner une personne qui veillera à la bonne exécution du testament ?',
                         'handle' => 'executeur[]',
                         'type' => 'radio_group',
@@ -541,6 +575,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'executeur[]',
                                 'value' => 'Oui',
@@ -552,6 +587,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'executeur[]',
                                 'value' => 'Non',
@@ -565,6 +601,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Nom et prenom de l executeur',
                         'title_handle' => 'nameExecuteur',
                         'handle' => 'nameExecuteur',
@@ -576,6 +613,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Ville',
                         'title_handle' => 'lieuExecuteur',
                         'handle' => 'lieuExecuteur',
@@ -587,6 +625,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous désigner un exécuteur alternatif ?',
                         'handle' => 'executeurAlternatif[]',
                         'type' => 'radio_group',
@@ -594,6 +633,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'executeurAlternatif[]',
                                 'value' => 'Oui',
@@ -605,6 +645,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'executeurAlternatif[]',
                                 'value' => 'Non',
@@ -618,6 +659,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Nom et prenom de l executeur Alternatif',
                         'title_handle' => 'executAltern',
                         'handle' => 'executAltern',
@@ -629,6 +671,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Ville',
                         'title_handle' => 'lieuExecuteur',
                         'handle' => 'lieuExecuteur',
@@ -656,6 +699,7 @@
            <?php
                 $inputs = array(
                     (object) [
+                        'id' => '',
                         'title' => 'Voulez-vous précisez des legs à titre particulier dans votre testament ?',
                         'handle' => 'legsParticulier[]',
                         'type' => 'radio_group',
@@ -663,6 +707,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'legsParticulier[]',
                                 'value' => 'Oui',
@@ -674,6 +719,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'legsParticulier[]',
                                 'value' => 'Non',
@@ -687,6 +733,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Voulez-vous précisez des legs à un organisme de bienfaisance ?',
                         'handle' => 'legsOrganisme[]',
                         'type' => 'radio_group',
@@ -694,6 +741,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'legsOrganisme[]',
                                 'value' => 'Oui',
@@ -705,6 +753,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'legsOrganisme[]',
                                 'value' => 'Non',
@@ -718,6 +767,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous que votre conjoint hérite les biens que vous avez laissé sans en avoir disposé ou à l’égard desquels les dispositions sont privées ?',
                         'handle' => 'conjointHerite[]',
                         'type' => 'radio_group',
@@ -725,6 +775,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'conjointHerite[]',
                                 'value' => 'Oui',
@@ -736,6 +787,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'conjointHerite[]',
                                 'value' => 'Non',
@@ -749,6 +801,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous déshériter quelqu’un ?',
                         'handle' => 'desheriterQuelqun[]',
                         'type' => 'radio_group',
@@ -756,6 +809,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'desheriterQuelqun[]',
                                 'value' => 'Oui',
@@ -767,6 +821,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'desheriterQuelqun[]',
                                 'value' => 'Non',
@@ -780,6 +835,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Nom et prenom',
                         'title_handle' => 'legFirstNameLastname',
                         'handle' => 'legDesignation',
@@ -791,6 +847,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Designation du leg',
                         'title_handle' => 'descriptionLeg',
                         'handle' => 'descriptionLeg',
@@ -802,6 +859,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Voulez-vous précisez des legs à un organisme de bienfaisance ?',
                         'handle' => 'legsOrganismeBienfaisance[]',
                         'type' => 'radio_group',
@@ -809,6 +867,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'legsOrganismeBienfaisance[]',
                                 'value' => 'Oui',
@@ -820,6 +879,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'legsOrganismeBienfaisance[]',
                                 'value' => 'Non',
@@ -832,6 +892,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Denomination/nom de l’organisme de bienfaisance',
                         'title_handle' => 'denominationName',
                         'handle' => 'denominationName',
@@ -843,6 +904,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Numero d enregistrement',
                         'title_handle' => 'denominationNumber',
                         'handle' => 'denominationNumber',
@@ -854,6 +916,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Description du leg',
                         'title_handle' => 'denominationDescription',
                         'handle' => 'denominationDescription',
@@ -865,6 +928,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Ville du leg',
                         'title_handle' => 'denominationVille',
                         'handle' => 'denominationVille',
@@ -876,6 +940,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous que votre conjoint hérite les biens que vous 
                                     avez laissé sans en avoir disposé ou à l’égard desquels les dispositions sont privées ?',
                         'handle' => 'conjointHeritierBiens[]',
@@ -884,6 +949,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'conjointHeritierBiens[]',
                                 'value' => 'Oui',
@@ -895,6 +961,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'conjointHeritierBiens[]',
                                 'value' => 'Non',
@@ -907,6 +974,7 @@
                         )
                       ],
                          (object) [
+                        'id' => '',
                         'title' => 'Nom et prénom',
                         'handle' => 'denominationHeritier',
                         'type' => 'text',
@@ -917,6 +985,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Ville de l heritier',
                         'title_handle' => 'villeHeritier',
                         'handle' => 'villeHeritier',
@@ -928,6 +997,7 @@
 
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Souhaitez-vous desheriter quelqu’un ?',
                         'handle' => 'desheriterQuelqunB[]',
                         'type' => 'radio_group',
@@ -935,6 +1005,7 @@
                         'placeholder'=> "",
                         'options' => array(
                             (object) [
+                                'id' => '',
                                 'title'=> 'Oui',
                                 'title_handle' => 'desheriterQuelqunB[]',
                                 'value' => 'Oui',
@@ -946,6 +1017,7 @@
 
                             ],
                             (object) [
+                                'id' => '',
                                 'title' => 'Non',
                                 'title_handle' => 'desheriterQuelqunB[]',
                                 'value' => 'Non',
@@ -959,6 +1031,7 @@
                         )
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Nom et prenom du desheriter',
                         'title_handle' => 'desheriterName',
                         'handle' => 'desheriterName',
@@ -986,6 +1059,7 @@
             <?php
                 $inputs = array(
                       (object) [
+                        'id' => '',
                         'title' => 'Lieu de la signature',
                         'title_handle' => 'lieuSignature',
                         'handle' => 'lieuSignature',
@@ -996,6 +1070,7 @@
                         'error'=> ""
                       ],
                       (object) [
+                        'id' => '',
                         'title' => 'Date de la signature',
                         'title_handle' => 'dateSignature',
                         'handle' => 'dateSignature',
