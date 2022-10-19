@@ -1,7 +1,7 @@
 const slidePage = document.querySelector(".slide-page");
 const nextBtnFirst = document.querySelector(".firstNext");
 /*[HEIGHT]*/
-const formOuter = document.querySelector(".form-outer");
+// const formOuter = document.querySelector(".form-outer");
 
 const prevBtnSec = document.querySelector(".prev-1");
 const nextBtnSec = document.querySelector(".next-1");
@@ -30,7 +30,6 @@ let current = 1;
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
   slidePage.style.marginLeft = "-0%";
-  formOuter.style.height = "100%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
@@ -40,7 +39,6 @@ nextBtnFirst.addEventListener("click", function(event){
 nextBtnSec.addEventListener("click", function(event){
   event.preventDefault();
   slidePage.style.marginLeft = "-20%";
-  formOuter.style.height = "100%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
@@ -50,7 +48,6 @@ nextBtnSec.addEventListener("click", function(event){
 nextBtnThird.addEventListener("click", function(event){
   event.preventDefault();
   slidePage.style.marginLeft = "-40%";
-  formOuter.style.height = "100%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
@@ -60,7 +57,6 @@ nextBtnThird.addEventListener("click", function(event){
 nextBtnFourth.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "-60%";
-    formOuter.style.height = "100%";
     bullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
@@ -70,7 +66,6 @@ nextBtnFourth.addEventListener("click", function(event){
 nextBtnFive.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "-80%";
-    formOuter.style.height = "200%";
     bullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
@@ -80,7 +75,6 @@ nextBtnFive.addEventListener("click", function(event){
   nextBtnSix.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "-100%";
-    formOuter.style.height = "100%";
     bullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
@@ -90,7 +84,6 @@ nextBtnFive.addEventListener("click", function(event){
 prevBtnSec.addEventListener("click", function(event){
   event.preventDefault();
   slidePage.style.marginLeft = "0%";
-  formOuter.style.height = "100%";
   bullet[current - 2].classList.remove("active");
   progressCheck[current - 2].classList.remove("active");
   progressText[current - 2].classList.remove("active");
@@ -99,7 +92,6 @@ prevBtnSec.addEventListener("click", function(event){
 prevBtnThird.addEventListener("click", function(event){
   event.preventDefault();
   slidePage.style.marginLeft = "-20%";
-  formOuter.style.height = "100%";
   bullet[current - 2].classList.remove("active");
   progressCheck[current - 2].classList.remove("active");
   progressText[current - 2].classList.remove("active");
@@ -108,7 +100,6 @@ prevBtnThird.addEventListener("click", function(event){
 prevBtnFourth.addEventListener("click", function(event){
   event.preventDefault();
   slidePage.style.marginLeft = "-40%";
-  formOuter.style.height = "100%";
   bullet[current - 2].classList.remove("active");
   progressCheck[current - 2].classList.remove("active");
   progressText[current - 2].classList.remove("active");
@@ -117,7 +108,6 @@ prevBtnFourth.addEventListener("click", function(event){
 prevBtnFive.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "-60%";
-    formOuter.style.height = "100%";
     bullet[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");
@@ -126,7 +116,7 @@ prevBtnFive.addEventListener("click", function(event){
 prevBtnSix.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "-80%";
-    formOuter.style.height = "200%";
+    // formOuter.style.height = "200%";
     bullet[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");

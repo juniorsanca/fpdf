@@ -3,7 +3,7 @@
     if ($type != "radio_group" && $type != "radio") { ?>
    
       <div class="mb-3" id="<?php echo $id ?>">
-        <label for="<?php echo $title_handle ?>" class="title form-label"><?php echo $title ?></label><br>
+        <p for="<?php echo $title_handle ?>" class="title form-label"><?php echo $title ?></p>
       
         <input type="hidden" 
             name="<?php echo $title_handle ?>-label" 
@@ -20,19 +20,18 @@
     } else {
       ?>
       <div class="mb-3" >
-        <label><?php echo $title ?></p>
+        <p><?php echo $title ?></p>
 
         <?php foreach ($options as $option) { ?>
           <input 
-            id="<?php  echo preg_replace('/[^A-Za-z0-9\-]/', '', $option->title_handle. '' .$option->title) ?>"
+            id="<?php echo preg_replace('/[^A-Za-z0-9\-]/', '', $option->title_handle. '' .$option->title) ?>"
             type="<?php echo $option->type ?>"
             name="<?php echo $option->title_handle ?>" 
             value="<?php echo $option->title ?>"
             class="radio"
             required>
-            <label class="form-label-option"> <?php echo $option->title ?> </label>
         </input>
-            
+        <label class="form-label-option" for="<?php echo preg_replace('/[^A-Za-z0-9\-]/', '', $option->title_handle. '' .$option->title) ?>"> <?php echo $option->title ?> </label>
 
         <?php } ?>
       </div>
