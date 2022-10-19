@@ -2,26 +2,18 @@ const slidePage = document.querySelector(".slide-page");
 const nextBtnFirst = document.querySelector(".firstNext");
 /*[HEIGHT]*/
 // const formOuter = document.querySelector(".form-outer");
-
 const prevBtnSec = document.querySelector(".prev-1");
 const nextBtnSec = document.querySelector(".next-1");
-
 const prevBtnThird = document.querySelector(".prev-2");
 const nextBtnThird = document.querySelector(".next-2");
-
 const prevBtnFourth = document.querySelector(".prev-3");
 const nextBtnFourth = document.querySelector(".next-3");
-
 const prevBtnFive = document.querySelector(".prev-4");
 const nextBtnFive = document.querySelector(".next-4");
-
 const prevBtnSix = document.querySelector(".prev-5");
 const nextBtnSix = document.querySelector(".next-5");
-
 // const nextBtnSeven = document.querySelector("");
-
 const submitBtn = document.querySelector(".submit");
-
 const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");

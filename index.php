@@ -14,13 +14,12 @@
             placeholder="<?php echo $placeholder ?>"
             required>
 
-
       </div>
       <?php
     } else {
       ?>
       <div class="mb-3" >
-        <p><?php echo $title ?></p>
+        <p class="title form-label"><?php echo $title ?></p>
 
         <?php foreach ($options as $option) { ?>
           <input 
@@ -28,7 +27,6 @@
             type="<?php echo $option->type ?>"
             name="<?php echo $option->title_handle ?>" 
             value="<?php echo $option->title ?>"
-            class="radio"
             required>
         </input>
         <label class="form-label-option" for="<?php echo preg_replace('/[^A-Za-z0-9\-]/', '', $option->title_handle. '' .$option->title) ?>"> <?php echo $option->title ?> </label>
@@ -76,7 +74,6 @@
             <?php
               if(empty($_POST['valide'])) {
             ?>
-
             <!-- PROGRESS BAR -->
                     <div class="progress-bar">
               <div class="step">
@@ -250,7 +247,6 @@
 
                   ]
                 );
-
                 foreach ($inputs as $input) {
                   createInput($input->title, $input->handle, $input->type, $input->options, $input->onclick, $input->placeholder);
                   //var_dump($input->options);

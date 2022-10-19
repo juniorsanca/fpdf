@@ -57,6 +57,7 @@ $Ntestament = implode(",", $Ntestaments);
 $donation = implode(",", $donations);
 $executeur = implode(",", $executeurs);
 $executeurAlternatif = implode(",", $executeurAlternatifs);
+
 $legsParticulier = implode(",", $legsParticuliers);
 $legsOrganisme = implode(",", $legsOrganismes);
 $conjointHerite = implode(",", $conjointHerites);
@@ -70,39 +71,153 @@ $pdf->AddPage();
  
 $pdf->SetFont('arial','',30);
 $pdf->Cell(30,5,"BASE : ",0,10);
+
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetFont('arial','',30);
+$pdf->Cell(30,5,"Etape 1 - Informations :",0,10);
+$pdf->Ln();
+$pdf->SetFont('arial','',12);
+$pdf->Ln();
+
 $pdf->Ln();
 $pdf->SetFont('arial','',12);
 $pdf->Cell(30,5,"Ceci est mon testament",0,10);
-
 
 $pdf->SetFont('arial','',12);
 $pdf->Ln();
 $pdf->Cell(30,5,"Je soussigné(e) ". $name ." ". $lastname. " né(e) le " .$birthday . " à " .$birthplace. "",0,1);
 $pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$situation."_".$conjoint."_".$child."_".$son."_".$tuteur."_".$admin."_".$tuteurN."_",0,0);
-$pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$testament."_".$Ntestament."_".$donation."_".$nameNotaire."_".$lieuNotaire."_".$dateNotation."_",0,0);
-$pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$executeur."_".$nameExecuteur."_".$lieuExecuteur."_".$executeurAlternatif."_".$executAltern."_",0,0);
-$pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$villeExecuteurAlternatif."_".$legsParticulier."_".$legsOrganisme."_".$conjointHerite."_",0,0);
-$pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$descriptionLeg."_".$legsOrganismeBienfaisance."_",0,0);
-$pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$denominationName."_".$denominationNumber."_".$denominationDescription."_".$denominationVille."_".$conjointHeritierBien."_",0,0);
-$pdf->Ln();
-$pdf->Cell(30,5,"MOTS :".$denominationHeritier."_".$denominationVilleHeritier."_".$desheriterQuelqunB."_".$desheriterName."_".$lieuSignature."_".$dateSignature."",0,0);
-$pdf->Ln();
-
 $pdf->Cell(30,5,"étant en pleine possession de mes facultés mentales, déclare établir mes dispositions de dernières ",0,0);
 $pdf->Ln();
 $pdf->Cell(30,5,"volontés ainsi qu’il suit : ",0,1);
 $pdf->Ln();
 $pdf->Cell(30,5,"Ce testament révoque toutes dispositions antérieures que j’aurai pu prendre par testament.",0,0);
 $pdf->Ln();
-$pdf->Cell(30,5,"Je prive les personnes suivantes de tout droit dans ma succession : ",0,1);
+$pdf->Cell(30,5,"Je suis ".$situation."",0,10);
 $pdf->Ln();
-$pdf->Cell(30,5,"Aux personnes suivantes :.$desheriterQuelqun. ",0,1);
+$pdf->Cell(30,5,"Nom et prénom de conjoint(e) ".$conjoint."",0,10);
+
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetFont('arial','',30);
+$pdf->Cell(30,5,"Etape 2 - Enfants :",0,10);
+$pdf->Ln();
+$pdf->SetFont('arial','',12);
+$pdf->Ln();
+$pdf->Cell(30,5,"Avez vous des enfants ? " .$child. "",0,10);
+
+$pdf->Ln();
+$pdf->Cell(30,5,"Nom et prénom de mes enfants " .$son. "",0,10);
+
+$pdf->Ln();
+$pdf->Cell(30,5,"Souhaiteriez-vous nommer un administrateur des biens de vos enfants ? " .$admin. "",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Souhaiteriez-vous nommer un tuteur des biens de vos enfants en cas de dèces des parents ? " .$tuteur. "",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Nom et prénom du tuteur désigné" .$tuteurN. "",0,10);
+
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetFont('arial','',30);
+$pdf->Cell(30,5,"Etape 3 - Testament :",0,10);
+$pdf->Ln();
+$pdf->SetFont('arial','',12);
+$pdf->Ln();
+$pdf->Cell(30,5,"Avez-vous déjà rédigé un testament ? " .$testament. "",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Souhaitez-vous que ce nouveau testament révoque ce que vous avez prévu ? " .$Ntestament. "",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Avez-vous déjà consenti une donation entre époux ? " .$donation. "",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Nom et prenom du notaire " .$nameNotaire. ", Lieu dexercice ".$lieuNotaire. "" ,0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Date de la donation " .$dateNotation."" ,0,10);
+
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetFont('arial','',30);
+$pdf->Cell(30,5,"Etape 4 - Désignation :",0,10);
+$pdf->Ln();
+$pdf->SetFont('arial','',12);
+$pdf->Ln();
+$pdf->Cell(30,5,"Soutaitez-vous désigner une personne qui viellera à la bonne éxecution du testament ? " .$executeur. "",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Nom et prenom de l executeur" .$nameExecuteur. ", ville : ".$lieuExecuteur."",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Souhaitez vous désigner un éxecuteur alternatif".$executeurAlternatif."Nom et prénom de l'exécuteur ".$executAltern."",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5," Ville : ".$villeExecuteurAlternatif."",0,10);
+$pdf->Ln();
+
+$pdf->Ln();
+$pdf->SetFont('arial','',30);
+$pdf->Cell(30,5,"Etape 5 - Dispositions :",0,10);
+$pdf->Ln();
+$pdf->SetFont('arial','',12);
+$pdf->Ln();
+$pdf->Cell(30,5,"Voulez-vous préciser des legs particuliers dans votre testament ? " .$legsParticulier."",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Voulez-vous préciser des legs à un organisme de bienfaisance ? " .$legsOrganisme."",0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Souhaitez vous que votre conjoint hérite  de vos biens : ".$conjointHerite."",0,10);
+$pdf->Ln();
+
+
+
+/*DESIGNTION DU LEG */
+// $pdf->Cell(30,5," Designation du leg : ".$legsOrganismeBienfaisances."",0,10);
+// $pdf->Ln();
+/*PRÉCISER LES LEGS À UN ORGANISME */
+$pdf->Cell(30,5,"Voulez vous préciser les legs à un organisme de bienfaisance: ".$legsOrganismeBienfaisance."",0,10);
+$pdf->Ln();
+/*NOM DE L'ORGANISME */
+$pdf->Cell(30,5,"Denomination de l'organisme de bienfaisance: ".$denominationName."",0,10);
+$pdf->Ln();
+/*NUMERO DE L ENREGISTREMENT */
+$pdf->Cell(30,5,"Numero d enregistrement : ".$denominationNumber."",0,10);
+$pdf->Ln();
+/*DESCRIPTION DU LEG */
+$pdf->Cell(30,5,"Description du leg : ".$descriptionLeg."",0,10);
+$pdf->Ln();
+/*VILLE DU LEG */
+$pdf->Cell(30,5,"Ville du leg: ".$denominationVilleHeritier."",0,10);
+/*CONJOINT HERITE */
+$pdf->Cell(30,5,"Souhaitez-vous que votre conjoint hérité des biens laissé ?: ".$conjointHeritierBien."",0,10);
+$pdf->Ln();
+/*NOM ET PRÉNOM */
+$pdf->Cell(30,5,"Nom et prénom : ".$denominationHeritier."",0,10);
+$pdf->Ln();
+/*VILLE DE LHERITIER */
+$pdf->Cell(30,5,"Ville leg: ".$denominationVille."",0,10);
+$pdf->Ln();
+/*DESHERITER QQU */
+$pdf->Cell(30,5,"Souhaitez-vous desheriter quelquun : ".$desheriterQuelqunB."",0,10);
+$pdf->Ln();
+/*NOM ET PRENOM DU DESHERITER */
+$pdf->Cell(30,5,"Nom et prénom du desheritier : ".$desheriterName."",0,10);
+
+
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetFont('arial','',30);
+$pdf->Cell(30,5,"Etape 6 - Signature :",0,10);
+$pdf->Ln();
+$pdf->SetFont('arial','',12);
+$pdf->Ln();
+$pdf->Cell(30,5,"Lieu de la signature, " .$lieuSignature. "" ,0,10);
+$pdf->Ln();
+$pdf->Cell(30,5,"Date de la signature, " .$dateSignature. "" ,0,10);
+$pdf->Ln();
+$pdf->Ln();
+$pdf->Ln();
+$pdf->Ln();
+$pdf->Ln();
+$pdf->Ln();
+/*---------[ Aux personnes suivantes  ]--------*/
+$pdf->Cell(30,5,"Aux personnes suivantes : ",0,1);
+$pdf->Ln();
+$pdf->Cell(30,5," ",0,1);
 $pdf->Ln();
 $pdf->Cell(30,5,"Je lègue … % de mon patrimoine, en ce compris les biens suivants :",0,1);
 $pdf->Ln();
@@ -128,9 +243,8 @@ $pdf->Cell(30,5,"Fait à … le …",0,1);
 $pdf->Ln();
 $pdf->Cell(30,5,"Signature",0,10);
 $pdf->Ln();
-$pdf->SetFont('arial','',30);
-$pdf->Cell(30,5,"Etape 2 - Enfants :",0,1);
-$pdf->Ln();
+
+
 $pdf->SetFont('arial','',14);
 $pdf->Cell(30,5,"Décés d’un parent et administrateur des biens :",0,1);
 $pdf->Ln();

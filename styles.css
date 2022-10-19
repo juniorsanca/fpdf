@@ -29,18 +29,13 @@ body {
     padding: 24px;
 }
 /*------[CHECK AND CHANGE COLOR]------*/
-/* label
-{
-background-color:#9C3;
-padding: 5px 12px;
-} */
 input[type=radio]
 {
-display:none;
+    display:none;
 }
 input[type=radio]:checked + label
 {
-background-color:#DFE5FA;
+    background-color:#DFE5FA;
 }
 /*-------[END CHECKED]------*/
 .mb-3{
@@ -89,71 +84,70 @@ background-color:#DFE5FA;
     border-radius: 30px;
 }
 .progress-bar .step .bullet{
-  height: 25px;
-  width: 25px;
-  border: 2px solid #000;
-  display: inline-block;
-  border-radius: 50%;
-  position: relative;
-  transition: 0.2s;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 25px;
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.2s;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
 }
 .progress-bar .step .bullet.active{
-  border-color: #030E84;
-  background: #030E84;
+    border-color: #030E84;
+    background: #030E84;
 }
 .progress-bar .step .bullet span{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .progress-bar .step .bullet.active span{
-  display: none;
+    display: none;
 }
 .progress-bar .step .bullet:before,
 .progress-bar .step .bullet:after{
-  position: absolute;
-  content: '';
-  bottom: 11px;
-  right: -51px;
-  height: 3px;
-  width: 44px;
-  background: #262626;
+    position: absolute;
+    content: '';
+    bottom: 11px;
+    right: -51px;
+    height: 3px;
+    width: 44px;
+    background: #262626;
 }
 .progress-bar .step .bullet.active:after{
-  background: #030E84;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: animate 0.3s linear forwards;
+    background: #030E84;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
 }
 @keyframes animate {
-  100%{
-    transform: scaleX(1);
-  }
+    100%{
+      transform: scaleX(1);
+    }
 }
 .progress-bar .step:last-child .bullet:before,
 .progress-bar .step:last-child .bullet:after{
-  display: none;
+    display: none;
 }
 .progress-bar .step p.active{
-  color: #030E84;
-  transition: 0.2s linear;
+    color: #030E84;
+    transition: 0.2s linear;
 }
 .progress-bar .step .check{
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  font-size: 15px;
-  transform: translate(-50%, -50%);
-  display: none;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
 }
 .progress-bar .step .check.active{
-  display: block;
-  color: #fff;
+    display: block;
+    color: #fff;
 }
-
 /* PROGRESS BAR -> CONTAINER BAR */
 .container .form-outer{
     width: 100%;
@@ -289,69 +283,65 @@ background-color:#DFE5FA;
   }
 
   @media only screen and (max-width: 425px){
-    .container {
-        padding-left: 0px;
-        padding-right: 0;
-    }
-    .container .progress-bar .step p {
-        font-weight: 500;
-        font-size: 8px;
-        color: #000;
-        margin-bottom: 8px;
-    }
-    .info {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 15px;
-        line-height: 30px;
-        color: #000000;
-        margin: 0;
-    }
-    .dowloand{
-        width: 65%;
-    }
-    .dowloand-text {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 22px;
-        color: #FFFFFF;
-    }
-    .dowloand-text {
-       font-size: 15px;
-    }
-    .form-outer form .page .field {
-        margin: 0;
-        display: block;
-    }
-    .radio{
-        margin-top: 20px;
-    }
-    .form-outer form .page .title {
-        font-size: 15px;
-    }
-    .container .form-outer{
-        width: 100%;
-        overflow: hidden;
-    }
-    .container .form-outer form {
-        display: flex;
-        width: 600%;
-    }
-    .form-outer form .page {
-        width: 20%;
-        transition: margin-left 0.3s ease-in-out;
-    }
-    .info .text-left .mt-5 .mb-5{
-        text-align: center;
-    }
-    .field .btns{
-        display: block;
-    }
-    /* .mb-3{
-        text-align: center;
-        margin-top: 20px;
-    } */
+  .container {
+      padding-left: 0px;
+      padding-right: 0;
+  }
+  .container .progress-bar .step p {
+      font-weight: 500;
+      font-size: 8px;
+      color: #000;
+      margin-bottom: 8px;
+  }
+  .info {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 30px;
+      color: #000000;
+      margin: 0;
+  }
+  .dowloand{
+      width: 65%;
+  }
+  .dowloand-text {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 22px;
+      color: #FFFFFF;
+  }
+  .dowloand-text {
+      font-size: 15px;
+  }
+  .form-outer form .page .field {
+      margin: 0;
+      display: block;
+  }
+  .radio{
+      margin-top: 20px;
+  }
+  .form-outer form .page .title {
+      font-size: 15px;
+  }
+  .container .form-outer{
+      width: 100%;
+      overflow: hidden;
+  }
+  .container .form-outer form {
+      display: flex;
+      width: 600%;
+  }
+  .form-outer form .page {
+      width: 20%;
+      transition: margin-left 0.3s ease-in-out;
+  }
+  .info .text-left .mt-5 .mb-5{
+      text-align: center;
+  }
+  .field .btns{
+      display: block;
+  }
   }
